@@ -23,12 +23,14 @@ public class PlayerController : MonoBehaviour {
 		else{
 			_instance = this;
 		}
+
+		cameraReference = GetComponent<Camera>();
 	}
 
 	// Use this for initialization
 	void Start () {
 	
-		cameraReference = GetComponent<Camera>();
+
 		
 	}
 	
