@@ -12,14 +12,14 @@ public class Node : MonoBehaviour {
 	
 	LineRenderer selectedLineRenderer;
 	LineRenderer parentLineRenderer;
-	
-	
+		
 	private int segments = 30;
-    private float xradius = 0.5f;
-    private float yradius = 0.5f;
+    private float radius = 0.5f;
 	
 	// Use this for initialization
 	void Start () {
+	
+		radius = GetComponent<CircleCollider2D>().radius;
 		
 		//SET SELECTED LINE
 		selectedLineRenderer = selectedLineObject.GetComponent<LineRenderer>();
@@ -88,8 +88,8 @@ public class Node : MonoBehaviour {
        
         for (int i = 0; i < (segments + 1); i++)
         {
-            x = Mathf.Sin (Mathf.Deg2Rad * angle) * xradius;
-            y = Mathf.Cos (Mathf.Deg2Rad * angle) * yradius;
+            x = Mathf.Sin (Mathf.Deg2Rad * angle) * radius;
+            y = Mathf.Cos (Mathf.Deg2Rad * angle) * radius;
                    
             selectedLineRenderer.SetPosition (i,new Vector3(x,y,z) );
                    
